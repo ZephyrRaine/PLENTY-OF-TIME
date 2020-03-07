@@ -8,4 +8,5 @@ public class PowerToggle : MonoBehaviour
     public Toggle toggle;
     public Transform playerAnchor;
     public Transform opponentAnchor;
+    public int option;
 }

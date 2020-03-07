@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         };
         _humansTimer.ticked += ()=>
         {
-            playerScore.humanCount += _game.dataModel.waterIncreaseValue; 
+            playerScore.humanCount += _game.dataModel.humansIncreaseValue; 
             playerScore.score += _game.dataModel.humansScoreIncrease; 
             playerScore.animalCount -= _game.dataModel.humansRequiredAnimals;    
         };
@@ -148,8 +148,7 @@ public class Player : MonoBehaviour
         }
     }
     public void UpdateScore()
-    {
-     
+    {     
         UpdateSun();
         UpdateMoon();
         UpdateAnimals();
@@ -193,11 +192,25 @@ public class Player : MonoBehaviour
         {
             if (playerFocus == playerId)
             {
-                powers[powerFocus].Launch(this, this, optionFocus);
+                if (optionFocus == 0)
+                {
+                    powers[powerFocus].Launch(this, this, powers[powerFocus].optionOne.option);
+                }
+                else
+                {
+                    powers[powerFocus].Launch(this, this, powers[powerFocus].optionTwo.option);
+                }                    
             }
             else
             {
-                opponent.powers[powerFocus].Launch(this, opponent, optionFocus);
+                if (optionFocus == 0)
+                {
+                    opponent.powers[powerFocus].Launch(this, opponent, opponent.powers[powerFocus].optionOne.option);
+                }
+                else
+                {
+                    opponent.powers[powerFocus].Launch(this, opponent, opponent.powers[powerFocus].optionTwo.option);
+                }
             }
         }
 
@@ -207,7 +220,6 @@ public class Player : MonoBehaviour
                 playerCursor.position = powers[powerFocus].optionOne.playerAnchor.transform.position;
             else
                 playerCursor.position = powers[powerFocus].optionTwo.playerAnchor.transform.position;
-
         }
         else
         {
@@ -215,7 +227,6 @@ public class Player : MonoBehaviour
                 playerCursor.position = opponent.powers[powerFocus].optionOne.opponentAnchor.transform.position;
             else
                 playerCursor.position = opponent.powers[powerFocus].optionTwo.opponentAnchor.transform.position;
-
         }
     }
 }
