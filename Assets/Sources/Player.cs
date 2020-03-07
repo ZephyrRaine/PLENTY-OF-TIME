@@ -31,14 +31,15 @@ public class Player : MonoBehaviour
     private Timer _moonTimer;
     private Timer _animalsTimer;
     private Timer _humansTimer;
+    private Timer _lightTimer;
 
     public void Setup(Game game)
     {
         _game = game;
-        
+
         powers.AddRange(transform.GetComponentsInChildren<Power>());
 
-        foreach(Power power in powers)
+        foreach (Power power in powers)
         {
             power.Setup(game);
         }
@@ -50,9 +51,22 @@ public class Player : MonoBehaviour
         _moonTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.waterDecreaseTime);
         _animalsTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.animalsIncreaseTime);
         _humansTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.humansIncreaseTime);
+        _lightTimer = _game.CreateTimer(_game.dataModel.lightOffTime);
 
-        _sunTimer.ticked += ()=>{playerScore.waterLevel += _game.dataModel.waterIncreaseValue; };
-        _moonTimer.ticked += ()=>{playerScore.waterLevel -= _game.dataModel.waterDecreaseValue; };
+        _lightTimer.stoped += () => { playerScore.lightOff = false; };
+
+        _sunTimer.ticked += ()=>
+        {
+            playerScore.waterLevel = Mathf.Min(_game.dataModel.waterMaximumLevels,
+                playerScore.waterLevel + _game.dataModel.waterIncreaseValue);
+        };
+
+        _moonTimer.ticked += ()=>
+        {
+            playerScore.waterLevel = Mathf.Max(0,
+                playerScore.waterLevel - _game.dataModel.waterDecreaseValue);
+        };
+
         _animalsTimer.ticked += ()=>
         {
                 playerScore.animalCount += _game.dataModel.animalsIncreaseValue; 
@@ -66,12 +80,21 @@ public class Player : MonoBehaviour
             playerScore.animalCount -= _game.dataModel.humansRequiredAnimals;    
         };
 
+
     }
 
     // Update is called once per frame
     public void UpdateInput()
     {
         Keyboard();   
+    }
+
+    private void UpdateLight ()
+    {
+        if(_lightTimer.running == false && playerScore.lightOff == true)
+        {
+            _lightTimer.Start();
+        }
     }
 
     private void UpdateSun()
@@ -115,14 +138,14 @@ public class Player : MonoBehaviour
     {
         if(!_animalsTimer.running)
         {
-            if(playerScore.light && playerScore.plantCount >= _game.dataModel.animalsRequiredPlants)
+            if(playerScore.lightOff && playerScore.plantCount >= _game.dataModel.animalsRequiredPlants)
             {
                 _animalsTimer.Start();
             }
         }
         else
         {
-            if(!playerScore.light || playerScore.plantCount < _game.dataModel.animalsRequiredPlants)
+            if(!playerScore.lightOff || playerScore.plantCount < _game.dataModel.animalsRequiredPlants)
             {
                 _animalsTimer.Stop();
             }
@@ -149,7 +172,8 @@ public class Player : MonoBehaviour
         }
     }
     public void UpdateScore()
-    {     
+    {
+        UpdateLight();
         UpdateSun();
         UpdateMoon();
         UpdateAnimals();

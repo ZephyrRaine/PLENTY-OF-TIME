@@ -2,13 +2,9 @@
 {
     public override void Launch(Player source, Player target, int option)
     {
-        if (option == 0)
+        if (target.playerScore.lightOff == false)
         {
-            target.playerScore.light = false;
-        }
-        else
-        {
-            target.playerScore.light = true;
+            target.playerScore.lightOff = true;
         }
     }
 }

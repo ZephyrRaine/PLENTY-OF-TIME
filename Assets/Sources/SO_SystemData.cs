@@ -35,7 +35,11 @@ public class SO_SystemData : ScriptableObject
     [Range(0f,10f)]
     [Tooltip("how often water decreases")]
     public float waterDecreaseTime;
-    
+
+    [Range(0f, 200f)]
+    [Tooltip("how max the watter level can go")]
+    public int waterMaximumLevels;
+
     [Range(0, 10)]
     [Tooltip("how many plants you need to produce animals")]
     public int animalsRequiredPlants;
