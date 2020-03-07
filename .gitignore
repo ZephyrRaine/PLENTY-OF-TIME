@@ -62,3 +62,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Maya swatch files
+*.mlt.swatches
+*hcm_swatch
+
