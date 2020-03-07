@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
         _animalsTimer.ticked += ()=>
         {
                 playerScore.animalCount += _game.dataModel.animalsIncreaseValue; 
+                playerScore.totalAnimalsCount += _game.dataModel.animalsIncreaseValue;
                 playerScore.score += _game.dataModel.animalsScoreIncrease;        
         };
         _humansTimer.ticked += ()=>

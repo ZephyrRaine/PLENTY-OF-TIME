@@ -70,6 +70,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _LEFT_WATER: 0
     - _Metallic: 0
     - _Mode: 0
     - _Noise1_FractLevel: 4
@@ -92,6 +93,7 @@ Material:
     - _Noise2_Wmult: -1.23
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RIGHT_WATER: 1
     - _SEA_FractLevel: 4
     - _SEA_LerpOffset: 0.22
     - _SEA_O: 0.17
@@ -122,6 +124,11 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+    - _DRY_SEA_Color1: {r: 1, g: 0, b: 0.19405699, a: 0}
+    - _DRY_SEA_Color2: {r: 0.7921569, g: 0.5312742, b: 0.07843135, a: 0}
+    - _DRY_SEA_Emissive1: {r: 1, g: 0, b: 0.194057, a: 0}
+    - _DRY_SEA_Emissive2: {r: 0.7921569, g: 0.5312742, b: 0.07843135, a: 0}
     - _EARTH_Emissive: {r: 0.21219127, g: 0.76245, b: 0.26116717, a: 0}
     - _EarthColor: {r: 0.15962753, g: 0.3490566, b: 0.15641688, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
