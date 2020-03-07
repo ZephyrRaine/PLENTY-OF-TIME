@@ -18,9 +18,6 @@ public class Game : MonoBehaviour
 
     private bool _gameRunning;
 
-    public GameObject player1Prefab;
-    public GameObject player2Prefab;
-
     private void Awake()
     {
         
@@ -44,22 +41,6 @@ public class Game : MonoBehaviour
         _gameTimer.stoped += () => { _gameRunning = false; };
         _gameTimer.Start();
         _gameRunning = true;
-
-
-        GameObject.Instantiate(player1Prefab, Vector3.zero, Quaternion.identity);
-        GameObject.Instantiate(player2Prefab, Vector3.zero, Quaternion.identity);
-
-        /*
-        Keyboard keyboard = Keyboard.current;
-
-        Keyboard keyboard = Keyboard.current;
-        
-        var inputP1 = PlayerInput.Instantiate(player1Prefab, controlScheme: "WASD", pairWithDevice: Keyboard.current);
-        inputP1.name = "P1";
-        
-        var inputP2 = PlayerInput.Instantiate(player2Prefab, controlScheme: "Arrows", pairWithDevice: Keyboard.current);
-        inputP2.name = "P2";
-        */
 
         GetComponent<GameFeedback>().Setup(this);
     }

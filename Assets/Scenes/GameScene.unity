@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1232455528}
+  m_Material: {fileID: 1051331136}
   m_Color: {r: 0, g: 1, b: 0.09392524, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1232455528}
+  m_Material: {fileID: 1051331136}
   m_Color: {r: 0, g: 1, b: 0.99030876, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1818,17 +1818,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 918052771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06533e3537dead4eba6cdac65cea433, type: 3}
+  m_Script: {fileID: 11500000, guid: a24727405026f73408c8a1fc90b04305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upKey: 273
-  downKey: 274
-  leftKey: 276
-  rightKey: 275
-  actionKey: 13
-  speed: 5
-  isGood: 0
   player: {fileID: 864704109}
+  speed: 5
+  horizontalAxis: HorizontalJ2
+  verticalAxis: VerticalJ2
+  fire: FireJ2
 --- !u!135 &918052773
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2095,6 +2092,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1051331136
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/Procedural UI Image
+  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1067769795 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6281227271953237527, guid: e2cb245d32614d34680a6d7b565c0872,
@@ -2440,39 +2470,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218875030}
   m_CullTransparentMesh: 0
---- !u!21 &1232455528
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/Procedural UI Image
-  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1239406214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5412,7 +5409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1232455528}
+  m_Material: {fileID: 1051331136}
   m_Color: {r: 0, g: 1, b: 0.09392524, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5640,7 +5637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1232455528}
+  m_Material: {fileID: 1051331136}
   m_Color: {r: 0, g: 1, b: 0.99030876, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5983,17 +5980,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1938074530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06533e3537dead4eba6cdac65cea433, type: 3}
+  m_Script: {fileID: 11500000, guid: a24727405026f73408c8a1fc90b04305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upKey: 122
-  downKey: 115
-  leftKey: 113
-  rightKey: 100
-  actionKey: 32
-  speed: 5
-  isGood: 1
   player: {fileID: 1118409849}
+  speed: 5
+  horizontalAxis: HorizontalJ1
+  verticalAxis: VerticalJ1
+  fire: FireJ1
 --- !u!135 &1938074532
 SphereCollider:
   m_ObjectHideFlags: 0

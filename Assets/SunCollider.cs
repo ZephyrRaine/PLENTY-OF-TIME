@@ -10,8 +10,8 @@ public class SunCollider : MonoBehaviour
         RaycastHit hitInfo;
         if(Physics.Raycast(Camera.main.transform.position, transform.position - Camera.main.transform.position, out hitInfo, 1000f, LayerMask.NameToLayer("PERSO")))
         {
-            Move m = hitInfo.transform.GetComponent<Move>();
-            if (m != null && Input.GetKeyDown(m.actionKey))
+            PlayerAvatar m = hitInfo.transform.GetComponent<PlayerAvatar>();
+            if (m != null && Input.GetButtonDown(m.fire))
             {
                 p.Launch(m.player, m.player.opponent, 0);
             }
