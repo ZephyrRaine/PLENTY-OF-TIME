@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 24783677}
-  text: {fileID: 185754877}
+  text: {fileID: 0}
   player: {fileID: 864704109}
   power: {fileID: 745416062}
 --- !u!114 &24783677
@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &179921667
 RectTransform:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179921666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1083938590}
+  m_Material: {fileID: 1529988446}
   m_Color: {r: 0, g: 1, b: 0.09392524, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -854,6 +854,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3154e98f2e6714e881b172e9ed5eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &542866782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8849658345911026386, guid: 6497996be46909845a7a252237afc87a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1382393057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29463420c84be5049bcd51ef171467ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552883480
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &639634436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -977,7 +989,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639634435}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1259,7 +1271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1083938590}
+  m_Material: {fileID: 1529988446}
   m_Color: {r: 0, g: 1, b: 0.99030876, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1517,7 +1529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 860890443}
-  text: {fileID: 185754877}
+  text: {fileID: 0}
   player: {fileID: 1118409849}
   power: {fileID: 686710305}
 --- !u!114 &860890443
@@ -1817,6 +1829,19 @@ MonoBehaviour:
   speed: 5
   isGood: 0
   player: {fileID: 864704109}
+--- !u!135 &918052773
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918052771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4368331
+  m_Center: {x: 0, y: 0.09961805, z: -0.0941546}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,39 +2107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462091ad2ade8f7439d0bfb3409dace1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &1083938590
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/Procedural UI Image
-  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1105912462
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3472,11 @@ PrefabInstance:
       propertyPath: plantText
       value: 
       objectReference: {fileID: 1239406216}
+    - target: {fileID: 3233994056725151563, guid: 6497996be46909845a7a252237afc87a,
+        type: 3}
+      propertyPath: lightImage
+      value: 
+      objectReference: {fileID: 179921668}
     - target: {fileID: 3240716875489803396, guid: 6497996be46909845a7a252237afc87a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -4480,6 +4477,11 @@ PrefabInstance:
       propertyPath: plantText
       value: 
       objectReference: {fileID: 890907139}
+    - target: {fileID: 8007860622995980379, guid: 6497996be46909845a7a252237afc87a,
+        type: 3}
+      propertyPath: lightImage
+      value: 
+      objectReference: {fileID: 639634437}
     - target: {fileID: 8014578225801773972, guid: 6497996be46909845a7a252237afc87a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5020,6 +5022,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acd881960c07e140ace2b3ed86aca65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &1529988446
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/Procedural UI Image
+  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1572604488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5125,18 +5160,31 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 8.717948
+  m_Radius: 18.89
 --- !u!4 &1572604491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8e7d19f411b6356408385b250225e21e,
     type: 3}
   m_PrefabInstance: {fileID: 1572604488}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1572604492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572604489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb1ec371ec405a4780b8eaf2ac4887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p: {fileID: 542866782}
 --- !u!224 &1579136964 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4355834519260138363, guid: e2cb245d32614d34680a6d7b565c0872,
@@ -5335,7 +5383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1083938590}
+  m_Material: {fileID: 1529988446}
   m_Color: {r: 0, g: 1, b: 0.09392524, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5412,7 +5460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5563,7 +5611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1083938590}
+  m_Material: {fileID: 1529988446}
   m_Color: {r: 0, g: 1, b: 0.99030876, a: 0.38431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5640,7 +5688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5772,17 +5820,17 @@ PrefabInstance:
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.316
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09000015
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.34
+      value: -5.17
       objectReference: {fileID: 0}
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
@@ -5917,6 +5965,19 @@ MonoBehaviour:
   speed: 5
   isGood: 1
   player: {fileID: 1118409849}
+--- !u!135 &1938074532
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938074530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4763349
+  m_Center: {x: -0.00000078976154, y: 0.14633492, z: -0.0941546}
 --- !u!1 &2000715367
 GameObject:
   m_ObjectHideFlags: 0
