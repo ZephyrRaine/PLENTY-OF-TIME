@@ -64,5 +64,5 @@ crashlytics-build.properties
 
 # Maya swatch files
 *.mlt.swatches
-*hcm_swatch
+*_hcm.swatch
 

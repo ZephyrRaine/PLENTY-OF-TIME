@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: planet
   m_Shader: {fileID: 4800000, guid: e8366ec7207f07841bd6a423033d5087, type: 3}
   m_ShaderKeywords: _NOISE1_FRACTLEVEL_KEY4 _NOISE2_FRACTLEVEL_KEY2 _SEA_FRACTLEVEL_KEY4
     _WORLD_FRACTLEVEL_KEY4
@@ -122,14 +122,14 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EARTH_Emissive: {r: 0.43137255, g: 2, b: 0, a: 0}
-    - _EarthColor: {r: 0.0061820745, g: 1, b: 0, a: 0}
+    - _EARTH_Emissive: {r: 0.21219127, g: 0.76245, b: 0.26116717, a: 0}
+    - _EarthColor: {r: 0.15962753, g: 0.3490566, b: 0.15641688, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Mer: {r: 0, g: 0.16111732, b: 0.6132076, a: 0}
     - _Mer1: {r: 0, g: 0.07190378, b: 0.2735849, a: 0}
     - _Noise1_TilingTexCoords: {r: 1.11, g: 0.62, b: 0, a: 0}
-    - _SEA_Color1: {r: 0, g: 0.85069823, b: 1, a: 0}
-    - _SEA_Color2: {r: 0.011263847, g: 0, b: 1, a: 0}
-    - _SEA_Emissive1: {r: 0.01126385, g: 0, b: 1, a: 0}
-    - _SEA_Emissive2: {r: 0.00073529413, g: 0, b: 0.0625, a: 0}
+    - _SEA_Color1: {r: 0, g: 0.61511374, b: 1, a: 0}
+    - _SEA_Color2: {r: 0.078497685, g: 0.5292693, b: 0.7924528, a: 0}
+    - _SEA_Emissive1: {r: 0, g: 0.35937786, b: 1, a: 0}
+    - _SEA_Emissive2: {r: 0, g: 0.26871255, b: 0.7735849, a: 0}
     - _Terre: {r: 0.31764707, g: 1, b: 0.2926998, a: 0}
