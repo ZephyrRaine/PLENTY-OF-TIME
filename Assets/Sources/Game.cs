@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
     public SO_SystemData dataModel;
     private List<Timer> _timer = new List<Timer>();
 
-    public float duration = 0f;
-
     private Timer _gameTimer = null;
 
     public Player player1;
     public Player player2;
 
+    public Text gameClock;
+
+    private bool _gameRunning;
 
 
     private void Awake()
@@ -33,13 +35,22 @@ public class Game : MonoBehaviour
 
         player1.playerScore.sun = true;
         player2.playerScore.sun = false;
-        
-        _gameTimer = new Timer(duration);
+
+        _gameTimer = CreateTimer(dataModel.gameDuration);
+
+        _gameTimer.stoped += () => { _gameRunning = false; };
+        _gameTimer.Start();
+        _gameRunning = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_gameRunning == false)
+            return;
+
+        gameClock.text = _gameTimer.currentTime;
+
         for (int i = 0; i < _timer.Count; i++)
         {
             _timer[i].Update(Time.deltaTime);
@@ -49,7 +60,6 @@ public class Game : MonoBehaviour
         player2.UpdateInput();
         player1.UpdateScore();
         player2.UpdateScore();
-
     }
 
     public Timer CreateTimer(float duration, float tick = 0f, bool loop = false)

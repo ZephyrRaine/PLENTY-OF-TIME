@@ -17,6 +17,17 @@ public class Timer
 
     public float progress { get { return _total / _duration; } }
 
+    public string currentTime
+    {
+        get
+        {
+            int numberOfSeconds = (int)_total;
+            int numberOfMinutes = (int)(_total / 60);
+
+            return string.Format("{0}:{1}", numberOfMinutes.ToString("00"), numberOfSeconds.ToString("00"));
+        }
+    }
+
     public Timer (float duration, float tick = 0f, bool loop = false)
     {
         _duration = duration;
