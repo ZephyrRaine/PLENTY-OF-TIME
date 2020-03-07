@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Game : MonoBehaviour
@@ -19,7 +18,6 @@ public class Game : MonoBehaviour
 
     private bool _gameRunning;
 
-    public PlayerInputManager playerInputManager;
     public GameObject player1Prefab;
     public GameObject player2Prefab;
 
