@@ -3,6 +3,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SystemData", menuName = "ScriptableObjects/SystemData", order = 1)]
 public class SO_SystemData : ScriptableObject
 {
+    [Tooltip("Game duration (seconds)")]
+    [Range(0f,420f)]
+
+    public float gameDuration;
+
     [Tooltip("duration of light shut down (seconds)")]
     [Range(0f,10f)]
     public float lightOffTime;
@@ -15,19 +20,20 @@ public class SO_SystemData : ScriptableObject
     [Tooltip("number of max plants")]
     public int plantsMaximumPlants;
 
+    
     [Range(0,10)]
     [Tooltip("by how much water increases (if sun on)")]
     public int waterIncreaseValue;
-
     [Range(0f,10f)]
-    [Tooltip("how often water increases (if sun on)")]
+    [Tooltip("how often water increases")]
     public float waterIncreaseTime;
+
 
     [Range(0, 10)]
     [Tooltip("by how much water decreases (if moon on))")]
     public int waterDecreaseValue;
     [Range(0f,10f)]
-    [Tooltip("how often water decreases (if moon on)")]
+    [Tooltip("how often water decreases")]
     public float waterDecreaseTime;
     
     [Range(0, 10)]

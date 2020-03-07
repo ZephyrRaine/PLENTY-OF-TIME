@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
 
     private Game _game;
 
+    private Timer _sunTimer;
+    private Timer _moonTimer;
+    private Timer _animalsTimer;
+    private Timer _humansTimer;
+
     public void Setup(Game game)
     {
         _game = game;
@@ -40,12 +45,115 @@ public class Player : MonoBehaviour
 
         powerCount = powers.Count;
         playerFocus = playerId;
+
+        _sunTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.waterIncreaseTime);
+        _moonTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.waterDecreaseTime);
+        _animalsTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.animalsIncreaseTime);
+        _humansTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.humansIncreaseTime);
+
+        _sunTimer.ticked += ()=>{playerScore.waterLevel += _game.dataModel.waterIncreaseValue; };
+        _moonTimer.ticked += ()=>{playerScore.waterLevel -= _game.dataModel.waterDecreaseValue; };
+        _animalsTimer.ticked += ()=>
+        {
+                playerScore.animalCount += _game.dataModel.animalsIncreaseValue; 
+                playerScore.score += _game.dataModel.animalsScoreIncrease;        
+        };
+        _humansTimer.ticked += ()=>
+        {
+            playerScore.humanCount += _game.dataModel.waterIncreaseValue; 
+            playerScore.score += _game.dataModel.humansScoreIncrease; 
+            playerScore.animalCount -= _game.dataModel.humansRequiredAnimals;    
+        };
+
     }
 
     // Update is called once per frame
     public void UpdateInput()
     {
         Keyboard();   
+    }
+
+    private void UpdateSun()
+    {
+        if(!_sunTimer.running)
+        {
+            if(playerScore.sun)
+            {
+                _sunTimer.Start();
+            }
+        }
+        else
+        {
+            if(!playerScore.sun)
+            {
+                _sunTimer.Stop();
+            }
+        }
+    }
+
+
+    private void UpdateMoon()
+    {
+        if(!_moonTimer.running)
+        {
+            if(!playerScore.sun)
+            {
+                _moonTimer.Start();
+            }
+        }
+        else
+        {
+            if(playerScore.sun)
+            {
+                _moonTimer.Stop();
+            }
+        }
+    }
+
+    private void UpdateAnimals()
+    {
+        if(!_animalsTimer.running)
+        {
+            if(playerScore.light && playerScore.plantCount >= _game.dataModel.animalsRequiredPlants)
+            {
+                _animalsTimer.Start();
+            }
+        }
+        else
+        {
+            if(!playerScore.light || playerScore.plantCount < _game.dataModel.animalsRequiredPlants)
+            {
+                _animalsTimer.Stop();
+            }
+        }
+    }
+
+    private void UpdateHumans()
+    {
+        bool condition = playerScore.cloudCount >= _game.dataModel.humansRequiredClouds && playerScore.waterLevel >= _game.dataModel.humansRequiredWater && playerScore.animalCount >= _game.dataModel.humansRequiredAnimals;
+
+        if(!_humansTimer.running)
+        {
+            if(condition)
+            {
+                _humansTimer.Start();
+            }
+        }
+        else
+        {
+            if(!condition)
+            {
+                _humansTimer.Stop();
+            }
+        }
+    }
+    public void UpdateScore()
+    {
+     
+        UpdateSun();
+        UpdateMoon();
+        UpdateAnimals();
+        UpdateHumans();
     }
 
     public void Keyboard ()
