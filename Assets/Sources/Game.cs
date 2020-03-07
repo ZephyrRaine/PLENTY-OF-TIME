@@ -47,6 +47,7 @@ public class Game : MonoBehaviour
         _gameTimer.Start();
         _gameRunning = true;
 
+
         GameObject.Instantiate(player1Prefab, Vector3.zero, Quaternion.identity);
         GameObject.Instantiate(player2Prefab, Vector3.zero, Quaternion.identity);
 
@@ -61,6 +62,8 @@ public class Game : MonoBehaviour
         var inputP2 = PlayerInput.Instantiate(player2Prefab, controlScheme: "Arrows", pairWithDevice: Keyboard.current);
         inputP2.name = "P2";
         */
+
+        GetComponent<GameFeedback>().Setup(this);
     }
 
     // Update is called once per frame
