@@ -15,6 +15,8 @@ public class Timer
 
     public bool running = false;
 
+    public float progress { get { return _total / _duration; } }
+
     public Timer (float duration, float tick = 0f, bool loop = false)
     {
         _duration = duration;
@@ -41,7 +43,7 @@ public class Timer
         _total += deltaTime;
         _step += deltaTime;
 
-        if (_step >= _tick)
+        if (_isTick == true && _step >= _tick)
         {
             ticked.Invoke();
             _step -= _tick;
