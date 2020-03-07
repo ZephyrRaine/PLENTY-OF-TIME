@@ -15,12 +15,12 @@ MonoBehaviour:
   Path: event:/Environmental loops/atmosphere
   guid: 16ddb9c29d750040988569eee90fa92c
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2447262940594691382}
+  - {fileID: -5765579450984126776}
   MinDistance: 0
   MaxDistance: 0
   Length: 147288
@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: event:/SFX/sun-influence
   guid: 4c2a8005f0b10442a14b022e881d7444
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: event:/SFX/plants-add
   guid: ca5d7e62dc7eef4d994de65b28fa0ab8
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
   Path: event:/SFX/clouds-delete
   guid: b3f695ac918aeb4caa8df5d52ba7d11c
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Sounds/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637192133352201907
+  lastModified: 637192198854771838
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -164,7 +164,7 @@ MonoBehaviour:
   Path: event:/Interface/seconds alarm
   guid: 75054b00b4b5d44ca92c8a51e693f2fa
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -187,7 +187,7 @@ MonoBehaviour:
   Path: event:/Interface/gaugedown
   guid: 4c7b64297d28e349beb12891f20cb469
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -195,6 +195,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1224
+--- !u!114 &-5765579450984126776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/atmosphere/intensity
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-5657590509955175740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/human life/intensity
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-5603114625475093870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music-ingame/goodvsbad
+  m_EditorClassIdentifier: 
+  Name: goodvsbad
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-5474717240848093035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sfx.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/Build/Desktop/sfx.bank
+  SubDir: 
+  lastModified: 637192198859579099
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5090688285374219532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +279,7 @@ MonoBehaviour:
   Path: event:/Interface/nope
   guid: 6e026edbd6331a468aca2a6de74414e5
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -233,7 +302,7 @@ MonoBehaviour:
   Path: event:/Interface/gaugeup
   guid: 413b8f9ae4b19e42b8d8bf3d77877e28
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -256,7 +325,7 @@ MonoBehaviour:
   Path: event:/SFX/evil-stinger
   guid: d6962f4c5bd12b4cb11787afac265f46
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -296,7 +365,7 @@ MonoBehaviour:
   Path: event:/SFX/clouds-add
   guid: 0103720d1288fc488fbae24af56182cb
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -319,12 +388,12 @@ MonoBehaviour:
   Path: event:/Music/music-ingame
   guid: bc1f4d218232bc448393a6aa9b56e468
   Banks:
-  - {fileID: 431302912530953179}
+  - {fileID: 3357427077159505425}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8627797278484347241}
+  - {fileID: -5603114625475093870}
   MinDistance: 0
   MaxDistance: 0
   Length: 428400
@@ -360,12 +429,12 @@ MonoBehaviour:
   Path: event:/Environmental loops/human life
   guid: f0afdd6b3451714b86ce76283325fbea
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -3959277109412243690}
+  - {fileID: -5657590509955175740}
   MinDistance: 0
   MaxDistance: 0
   Length: 202167
@@ -384,15 +453,32 @@ MonoBehaviour:
   Path: event:/Environmental loops/animal life
   guid: 6afa34c4237ba649a912a49505e40669
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1699741856366170303}
+  - {fileID: -328571054314647112}
   MinDistance: 0
   MaxDistance: 0
   Length: 7183
+--- !u!114 &-1964150331693094315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/water/intensity
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-1699741856366170303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +496,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-1397313423750502117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637192198854741858
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1039840093295937400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +529,7 @@ MonoBehaviour:
   Path: event:/Interface/victory
   guid: 15d718dd76b81445a740360115a18a6b
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -448,7 +552,7 @@ MonoBehaviour:
   Path: event:/SFX/moon-influence
   guid: 20a6dc5fa55ebc4f81191597671f4f18
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -456,6 +560,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1859
+--- !u!114 &-328571054314647112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/animal life/intensity
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,9 +591,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6339693614951029684}
-  - {fileID: -7991553712624270269}
-  - {fileID: 431302912530953179}
-  - {fileID: -7044630103057312305}
+  - {fileID: -1397313423750502117}
+  - {fileID: 3357427077159505425}
+  - {fileID: -5474717240848093035}
   EditorEvents:
   - {fileID: 5127820299094244010}
   - {fileID: -2591665088191279354}
@@ -499,10 +620,10 @@ MonoBehaviour:
   - {fileID: 8416187917730327280}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -7991553712624270269}
+  - {fileID: -1397313423750502117}
   StringsBanks:
   - {fileID: -6339693614951029684}
-  stringsBankWriteTime: 637192133352201907
+  stringsBankWriteTime: 637192198854771838
   cacheVersion: 3
 --- !u!114 &431302912530953179
 MonoBehaviour:
@@ -537,7 +658,7 @@ MonoBehaviour:
   Path: event:/SFX/good-stinger
   guid: c99ffcdd64faae47b8d7132e052b61a7
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -545,6 +666,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4186
+--- !u!114 &3357427077159505425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/Build/Desktop/music.bank
+  SubDir: 
+  lastModified: 637192198857960057
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5127820299094244010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,12 +699,12 @@ MonoBehaviour:
   Path: event:/Environmental loops/water
   guid: 1d8def7669930b45af2c0790db6eb634
   Banks:
-  - {fileID: -7991553712624270269}
+  - {fileID: -1397313423750502117}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5945377855706644602}
+  - {fileID: -1964150331693094315}
   MinDistance: 0
   MaxDistance: 0
   Length: 55830
@@ -584,7 +723,7 @@ MonoBehaviour:
   Path: event:/Interface/action
   guid: 3bc6fd23695dbf48b7edfa9a4df70e6a
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -624,12 +763,12 @@ MonoBehaviour:
   Path: event:/Environmental loops/plantlife
   guid: 083378c6b8444349b6878c46655e342b
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8101457821913796754}
+  - {fileID: 8067324542989588509}
   MinDistance: 0
   MaxDistance: 0
   Length: 69784
@@ -648,7 +787,7 @@ MonoBehaviour:
   Path: event:/Interface/click
   guid: f3b6551515a48b47a1a7fe1780bbe1f8
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -671,7 +810,7 @@ MonoBehaviour:
   Path: event:/SFX/plants-delete
   guid: 06796cb0527a8c4b9153997e4e38c309
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -694,7 +833,7 @@ MonoBehaviour:
   Path: event:/Interface/start
   guid: 1527074a78162f44babec55dccceb2bf
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -702,6 +841,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1562
+--- !u!114 &8067324542989588509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/plantlife/intensity
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &8101457821913796754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +890,7 @@ MonoBehaviour:
   Path: event:/SFX/lightoff
   guid: fe5c23e14984cd4ba69ee0eaf6aab4ff
   Banks:
-  - {fileID: -7044630103057312305}
+  - {fileID: -5474717240848093035}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
