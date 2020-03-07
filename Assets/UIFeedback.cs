@@ -21,7 +21,9 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
         //text = GetComponentInChildren<TMP_Text>();
 
         image.color = Color.clear;
-        text.text = "";
+
+        if (text != null)
+            text.text = "";
     }
     //public void OnPointerClick(PointerEventData eventData)
     //{
