@@ -5,6 +5,7 @@ public class PlayerScore : MonoBehaviour
 {
     public Text waterText = null;
     public Text animalText = null;
+    public Text totalAnimals = null;
     public Text cloudText = null;
     public Text humanText = null;
     public Text sunText = null;
@@ -16,6 +17,7 @@ public class PlayerScore : MonoBehaviour
 
     private int _waterLevel = 0;
     private int _animalCount = 0;
+    private int _totalAnimalsCount = 0;
     private int _cloudCount = 0;
     private int _humanCount = 0;
     private int _plantCount = 0;
@@ -26,6 +28,7 @@ public class PlayerScore : MonoBehaviour
 
     public int waterLevel { get { return _waterLevel; } set { _waterLevel = value; waterText.text = "water " + _waterLevel; } }
     public int animalCount { get { return _animalCount; } set {  _animalCount = value; animalText.text = "animal " + _animalCount; } }
+    public int totalAnimalsCount { get { return _totalAnimalsCount; } set {  _totalAnimalsCount = value; totalAnimals.text = "TOTAL " + _totalAnimalsCount; } }
     public int cloudCount { get { return _cloudCount; } set { _cloudCount = value; cloudText.text = "cloud " + _cloudCount; } }
     public int humanCount { get { return _humanCount; } set { _humanCount = value; humanText.text = "human " + _humanCount; } }
     public int plantCount { get { return _plantCount; } set { _plantCount = value; plantText.text = "plant " + _plantCount; } }
