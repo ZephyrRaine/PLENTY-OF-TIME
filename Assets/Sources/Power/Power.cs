@@ -19,8 +19,12 @@ public abstract class Power : MonoBehaviour
     public PowerToggle optionOne;
     public PowerToggle optionTwo;
 
-    public Transform playerAnchor;
-    public Transform opponentAnchor;
+    protected Game _game;
+
+    public virtual void Setup(Game game)
+    {
+        _game = game;
+    }
 
     public void UpdateCooldown (float deltaTime)
     {
@@ -29,7 +33,7 @@ public abstract class Power : MonoBehaviour
 
 
 
-    public virtual void Launch(Player player, int option)
+    public virtual void Launch(Player source, Player target, int option)
     {
 
     }

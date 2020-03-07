@@ -635,6 +635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4933210298589282815}
   - component: {fileID: 814802227935346843}
+  - component: {fileID: 351273196658653704}
   m_Layer: 5
   m_Name: Earth
   m_TagString: Untagged
@@ -695,6 +696,30 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &351273196658653704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511804808913852493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6eb07c649801f4cbab3d03db4641d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterText: {fileID: 7467110289608706941}
+  animalText: {fileID: 5932794655302897261}
+  fishText: {fileID: 3540858319012798557}
+  birdText: {fileID: 76362195647513314}
+  cloudText: {fileID: 3845105662118293834}
+  humanText: {fileID: 7759963733713658223}
+  plantText: {fileID: 3509060171795033426}
+  animalCount: 0
+  birdCount: 0
+  fishCount: 0
+  humanCount: 0
+  plantCount: 0
 --- !u!1 &8070053846601069558
 GameObject:
   m_ObjectHideFlags: 0

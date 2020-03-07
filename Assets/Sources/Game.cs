@@ -10,14 +10,24 @@ public class Game : MonoBehaviour
 
     private Timer _gameTimer = null;
 
+    public Player player1;
+    public Player player2;
+
+    private void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartGame();
     }
 
     public void StartGame ()
     {
+        player1.Setup(this);
+        player2.Setup(this);
+
         _gameTimer = new Timer(duration);
     }
 
@@ -28,5 +38,8 @@ public class Game : MonoBehaviour
         {
             _timer[i].Update(Time.deltaTime);
         }
+
+        player1.UpdateInput();
+        player2.UpdateInput();
     }
 }
