@@ -12,6 +12,7 @@ public class Timer
 
     public Action ticked;
     public Action stoped;
+    public Action started;
 
     public bool running = false;
 
@@ -44,6 +45,7 @@ public class Timer
     public void Start ()
     {
         running = true;
+        started?.Invoke();
     }
 
     public void Stop ()
