@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a4129ef62fbb79d4dbbea2bad66b93c3
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Albedo: {fileID: 2800000, guid: 61c0b9c0523734e0e91bc6043c72a490, type: 3}
+  - _Mask: {fileID: 2800000, guid: 5798ded558355430c8a9b13ee12a847c, type: 3}
+  - _TileableFire: {fileID: 2800000, guid: e28dc97a9541e3642a48c0e3886688c5, type: 3}
+  - _Specular: {fileID: 2800000, guid: 1310c389b00742944a196851ef347845, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
