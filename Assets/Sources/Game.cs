@@ -41,6 +41,8 @@ public class Game : MonoBehaviour
         _gameTimer.stoped += () => { _gameRunning = false; };
         _gameTimer.Start();
         _gameRunning = true;
+
+        GetComponent<GameFeedback>().Setup(this);
     }
 
     // Update is called once per frame
