@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public int playerId = 0;
     public Player opponent = null;
     public List<Power> powers = new List<Power>();
+    public PlayerScore playerScore = null;
+    public Transform playerCursor = null;
+    public World world = null;
 
     private int playerFocus = 0;
     private int powerFocus = 0;
@@ -20,27 +23,48 @@ public class Player : MonoBehaviour
     public KeyCode up = default(KeyCode);
     public KeyCode down = default(KeyCode);
     public KeyCode jump = default(KeyCode);
+    public KeyCode action = default(KeyCode);
 
-    private void Awake()
+    private Game _game;
+
+    private Timer _sunTimer;
+    private Timer _moonTimer;
+    private Timer _animalsTimer;
+    private Timer _humansTimer;
+
+    public void Setup(Game game)
     {
+        _game = game;
+        
         powers.AddRange(transform.GetComponentsInChildren<Power>());
-    }
-
-    void Start()
-    {
-        powerCount = powers.Count;
 
         foreach(Power power in powers)
         {
-            //
+            power.Setup(game);
         }
 
-        foreach(Power power in opponent.powers)
-        {
-            //
-        }
-
+        powerCount = powers.Count;
         playerFocus = playerId;
+
+        _sunTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.waterIncreaseTime);
+        _moonTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.waterDecreaseTime);
+        _animalsTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.animalsIncreaseTime);
+        _humansTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.humansIncreaseTime);
+
+        _sunTimer.ticked += ()=>{playerScore.waterLevel += _game.dataModel.waterIncreaseValue; };
+        _moonTimer.ticked += ()=>{playerScore.waterLevel -= _game.dataModel.waterDecreaseValue; };
+        _animalsTimer.ticked += ()=>
+        {
+                playerScore.animalCount += _game.dataModel.animalsIncreaseValue; 
+                playerScore.score += _game.dataModel.animalsScoreIncrease;        
+        };
+        _humansTimer.ticked += ()=>
+        {
+            playerScore.humanCount += _game.dataModel.waterIncreaseValue; 
+            playerScore.score += _game.dataModel.humansScoreIncrease; 
+            playerScore.animalCount -= _game.dataModel.humansRequiredAnimals;    
+        };
+
     }
 
     // Update is called once per frame
@@ -49,15 +73,100 @@ public class Player : MonoBehaviour
         Keyboard();   
     }
 
+    private void UpdateSun()
+    {
+        if(!_sunTimer.running)
+        {
+            if(playerScore.sun)
+            {
+                _sunTimer.Start();
+            }
+        }
+        else
+        {
+            if(!playerScore.sun)
+            {
+                _sunTimer.Stop();
+            }
+        }
+    }
+
+
+    private void UpdateMoon()
+    {
+        if(!_moonTimer.running)
+        {
+            if(!playerScore.sun)
+            {
+                _moonTimer.Start();
+            }
+        }
+        else
+        {
+            if(playerScore.sun)
+            {
+                _moonTimer.Stop();
+            }
+        }
+    }
+
+    private void UpdateAnimals()
+    {
+        if(!_animalsTimer.running)
+        {
+            if(playerScore.light && playerScore.plantCount >= _game.dataModel.animalsRequiredPlants)
+            {
+                _animalsTimer.Start();
+            }
+        }
+        else
+        {
+            if(!playerScore.light || playerScore.plantCount < _game.dataModel.animalsRequiredPlants)
+            {
+                _animalsTimer.Stop();
+            }
+        }
+    }
+
+    private void UpdateHumans()
+    {
+        bool condition = playerScore.cloudCount >= _game.dataModel.humansRequiredClouds && playerScore.waterLevel >= _game.dataModel.humansRequiredWater && playerScore.animalCount >= _game.dataModel.humansRequiredAnimals;
+
+        if(!_humansTimer.running)
+        {
+            if(condition)
+            {
+                _humansTimer.Start();
+            }
+        }
+        else
+        {
+            if(!condition)
+            {
+                _humansTimer.Stop();
+            }
+        }
+    }
+    public void UpdateScore()
+    {
+     
+        UpdateSun();
+        UpdateMoon();
+        UpdateAnimals();
+        UpdateHumans();
+    }
+
     public void Keyboard ()
     {
         if (Input.GetKeyDown(left))
         {
-            optionFocus = (optionFocus == 0 ? 1 : 0);
+            if (optionFocus > 0)
+                optionFocus = 0;
         }
         else if (Input.GetKeyDown(right))
         {
-
+            if (optionFocus < 1)
+                optionFocus = 1;
         }
         else if (Input.GetKeyDown(up))
         {
@@ -75,7 +184,38 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyDown(jump))
         {
-            
+            if (playerFocus == playerId)
+                playerFocus = opponent.playerId;
+            else
+                playerFocus = playerId;
+        }
+        else if (Input.GetKeyDown(action))
+        {
+            if (playerFocus == playerId)
+            {
+                powers[powerFocus].Launch(this, this, optionFocus);
+            }
+            else
+            {
+                opponent.powers[powerFocus].Launch(this, opponent, optionFocus);
+            }
+        }
+
+        if (playerFocus == playerId)
+        {
+            if (optionFocus == 0)
+                playerCursor.position = powers[powerFocus].optionOne.playerAnchor.transform.position;
+            else
+                playerCursor.position = powers[powerFocus].optionTwo.playerAnchor.transform.position;
+
+        }
+        else
+        {
+            if (optionFocus == 0)
+                playerCursor.position = opponent.powers[powerFocus].optionOne.opponentAnchor.transform.position;
+            else
+                playerCursor.position = opponent.powers[powerFocus].optionTwo.opponentAnchor.transform.position;
+
         }
     }
 }

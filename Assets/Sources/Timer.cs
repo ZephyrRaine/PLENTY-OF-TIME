@@ -1,5 +1,5 @@
 ﻿using UnityEngine.Events;
-
+using System; 
 public class Timer
 {
     private float _total = 0f;
@@ -10,8 +10,8 @@ public class Timer
     private float   _tick = 0f;
     private bool    _isTick = false;
 
-    public UnityEvent ticked = new UnityEvent();
-    public UnityEvent stoped = new UnityEvent();
+    public Action ticked;
+    public Action stoped;
 
     public bool running = false;
 
@@ -22,8 +22,10 @@ public class Timer
         _duration = duration;
         _isLoop = loop;
 
+
         if (tick > 0f)
         {
+            _tick = tick;
             _isTick = true;
         }
     }
@@ -36,16 +38,21 @@ public class Timer
     public void Stop ()
     {
         running = false;
+        _total = 0f;
+        _step = 0f;
     }
 
     public void Update(float deltaTime)
     {
+        if(!running)
+            return;
+
         _total += deltaTime;
         _step += deltaTime;
 
         if (_isTick == true && _step >= _tick)
         {
-            ticked.Invoke();
+            ticked?.Invoke();
             _step -= _tick;
         }
 
@@ -59,7 +66,7 @@ public class Timer
                 running = false;
             }
 
-            stoped.Invoke();
+            stoped?.Invoke();
         }
     }
 }
