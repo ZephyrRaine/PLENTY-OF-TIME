@@ -14,7 +14,8 @@ public class OrientProp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Quaternion.LookAt
-        transform.LookAt(Vector3.zero, Vector3.down);
+        
+        transform.LookAt(Vector3.zero);
+        transform.rotation=transform.rotation*Quaternion.Euler(-90, 0, 0);
     }
 }
