@@ -54,8 +54,19 @@ public class Player : MonoBehaviour
         _lightTimer = _game.CreateTimer(_game.dataModel.lightOffTime);
 
         _lightTimer.stoped += () => { playerScore.lightOff = false; };
-        _sunTimer.ticked += ()=>{playerScore.waterLevel += _game.dataModel.waterIncreaseValue; };
-        _moonTimer.ticked += ()=>{playerScore.waterLevel -= _game.dataModel.waterDecreaseValue; };
+
+        _sunTimer.ticked += ()=>
+        {
+            playerScore.waterLevel = Mathf.Min(_game.dataModel.waterMaximumLevels,
+                playerScore.waterLevel + _game.dataModel.waterIncreaseValue);
+        };
+
+        _moonTimer.ticked += ()=>
+        {
+            playerScore.waterLevel = Mathf.Max(0,
+                playerScore.waterLevel - _game.dataModel.waterDecreaseValue);
+        };
+
         _animalsTimer.ticked += ()=>
         {
                 playerScore.animalCount += _game.dataModel.animalsIncreaseValue; 
