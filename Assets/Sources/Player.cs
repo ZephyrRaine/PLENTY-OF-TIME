@@ -138,14 +138,14 @@ public class Player : MonoBehaviour
     {
         if(!_animalsTimer.running)
         {
-            if(playerScore.lightOff && playerScore.plantCount >= _game.dataModel.animalsRequiredPlants)
+            if(playerScore.lightOff == false && playerScore.plantCount >= _game.dataModel.animalsRequiredPlants)
             {
                 _animalsTimer.Start();
             }
         }
         else
         {
-            if(!playerScore.lightOff || playerScore.plantCount < _game.dataModel.animalsRequiredPlants)
+            if(playerScore.lightOff || playerScore.plantCount < _game.dataModel.animalsRequiredPlants)
             {
                 _animalsTimer.Stop();
             }
