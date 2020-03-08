@@ -7,6 +7,8 @@ public class ObjectFeedback : MonoBehaviour
     List<GameObject> allProps;
     List<GameObject> availableProps;
     List<GameObject> busyProps;
+
+    GameObject particleSystemObject;
     private void Start()
     {
         availableProps = new List<GameObject>();
@@ -26,8 +28,16 @@ public class ObjectFeedback : MonoBehaviour
         {
             GameObject go = availableProps[Random.Range(0, availableProps.Count)];
             availableProps.Remove(go);
-            busyProps.Remove(go);
+            busyProps.Add(go);
             go.SetActive(true);
+            Vector3 center = Vector3.zero;
+            foreach(Transform t in go.transform)
+            {
+                center += t.position;
+            }
+            center /= go.transform.childCount;
+            GameObject gao = Instantiate(particleSystemObject, center, Quaternion.identity);
+            gao.transform.LookAt(Vector3.zero);
         }
     }
 
@@ -42,5 +52,9 @@ public class ObjectFeedback : MonoBehaviour
         }
     }
 
+    public void GiveParticleSystem(GameObject prefab)
+    {
+        particleSystemObject = prefab;
+    }
 
 }
