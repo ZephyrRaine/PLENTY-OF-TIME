@@ -66,3 +66,4 @@ crashlytics-build.properties
 *.mlt.swatches
 *_hcm.swatch
 
+fmod_editor.log
