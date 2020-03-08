@@ -7241,6 +7241,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4355834519264856534, guid: e2cb245d32614d34680a6d7b565c0872,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.93
+      objectReference: {fileID: 0}
     - target: {fileID: 4355834519978770639, guid: e2cb245d32614d34680a6d7b565c0872,
         type: 3}
       propertyPath: m_Enabled
