@@ -55,6 +55,7 @@ public class Timer
         running = false;
         _total = 0f;
         _step = 0f;
+        stoped?.Invoke();
     }
 
     public void Update(float deltaTime)
