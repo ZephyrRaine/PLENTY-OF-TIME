@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMOD.Studio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,9 +34,13 @@ public class Player : MonoBehaviour
     public Timer humansTimer;
     public Timer lightTimer;
 
+    public EventInstance lightOffInstance = default(EventInstance);
+
     public void Setup(Game game)
     {
         _game = game;
+
+        lightOffInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/lightoff");
 
         powers.AddRange(transform.GetComponentsInChildren<Power>());
 
@@ -53,7 +58,8 @@ public class Player : MonoBehaviour
         humansTimer = _game.CreateTimer(_game.dataModel.gameDuration, _game.dataModel.humansIncreaseTime);
         lightTimer = _game.CreateTimer(_game.dataModel.lightOffTime);
 
-        lightTimer.stoped += () => { playerScore.lightOff = false; };
+        lightTimer.stoped += () => { playerScore.lightOff = false; lightOffInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); };
+
 
         sunTimer.ticked += ()=>
         {
@@ -93,6 +99,7 @@ public class Player : MonoBehaviour
     {
         if(lightTimer.running == false && playerScore.lightOff == true)
         {
+            lightOffInstance.start();
             lightTimer.Start();
         }
     }
