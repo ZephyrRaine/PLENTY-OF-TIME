@@ -1297,7 +1297,7 @@ MonoBehaviour:
   objectsPlantsP2: {fileID: 428625272}
   prefabParticleSystem: {fileID: 629414506409622126, guid: e9bf3a197f90e594db0e7b719ff0847d,
     type: 3}
-  planetObject: {fileID: 1758085616}
+  planetObject: {fileID: 741895763}
 --- !u!1 &348584688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8675729111941814571, guid: b50e6b89b2f04ac4084562d701ede072,
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   objectsPlantsP2: {fileID: 187891256}
   prefabParticleSystem: {fileID: 629414506409622126, guid: e9bf3a197f90e594db0e7b719ff0847d,
     type: 3}
-  planetObject: {fileID: 1758085616}
+  planetObject: {fileID: 2071059940}
 --- !u!114 &542866782 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8849658345911026386, guid: 6497996be46909845a7a252237afc87a,
@@ -6893,6 +6893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701a8492e08ac904895397a33be1d40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!23 &741895763 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 248002583390114279, guid: 751194a27d90d6d4894397a6cf4d08b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 52257330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &745416062 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7492180881464704207, guid: 6497996be46909845a7a252237afc87a,
@@ -11808,6 +11814,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acd881960c07e140ace2b3ed86aca65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!23 &1534100277 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1631252693972520088, guid: 2f268bb01f361e944853edbf60a6ef68,
+    type: 3}
+  m_PrefabInstance: {fileID: 1403912496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1559629627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14259,6 +14271,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058933186}
   m_CullTransparentMesh: 0
+--- !u!23 &2071059940 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 979593663618111964, guid: 488f07df41600cb4ab22f7d48f12b929,
+    type: 3}
+  m_PrefabInstance: {fileID: 636805025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2093446448
 GameObject:
   m_ObjectHideFlags: 0
@@ -14431,7 +14449,7 @@ MonoBehaviour:
   objectsPlantsP2: {fileID: 1559629635}
   prefabParticleSystem: {fileID: 629414506409622126, guid: e9bf3a197f90e594db0e7b719ff0847d,
     type: 3}
-  planetObject: {fileID: 1758085616}
+  planetObject: {fileID: 1534100277}
 --- !u!1001 &4355834518557244607
 PrefabInstance:
   m_ObjectHideFlags: 0
