@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 2899910694869574804}
   - component: {fileID: 2899910694869574805}
   - component: {fileID: 2899910694869574807}
+  - component: {fileID: 8607702091978549138}
   m_Layer: 5
   m_Name: GameTimer
   m_TagString: Untagged
@@ -244,7 +245,34 @@ MonoBehaviour:
   dataModel: {fileID: 11400000, guid: d3dff72d991fd844ba0c274a3001ced7, type: 2}
   player1: {fileID: 3780918453609892411}
   player2: {fileID: 5881870999455886757}
-  gameClock: {fileID: 2899910694869574805}
+  gameClock: {fileID: 0}
+--- !u!114 &8607702091978549138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899910694869574803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14c356ce44596a43bc34feec7ebea7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconAnimalPlayer1: {fileID: 0}
+  iconAnimalPlayer2: {fileID: 0}
+  iconHumansPlayer1: {fileID: 0}
+  iconHumansPlayer2: {fileID: 0}
+  feedbackMoonSun: {fileID: 0}
+  objectsAnimalP1: {fileID: 0}
+  objectsAnimalsP2: {fileID: 0}
+  objectsHumansP1: {fileID: 0}
+  objectsHumansP2: {fileID: 0}
+  objectsCloudsP1: {fileID: 0}
+  objectsCloudsP2: {fileID: 0}
+  objectsPlantsP1: {fileID: 0}
+  objectsPlantsP2: {fileID: 0}
+  prefabParticleSystem: {fileID: 629414506409622126, guid: e9bf3a197f90e594db0e7b719ff0847d,
+    type: 3}
 --- !u!1 &2899910694870764742
 GameObject:
   m_ObjectHideFlags: 0

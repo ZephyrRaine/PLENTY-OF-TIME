@@ -23,6 +23,7 @@ public class GameFeedback : MonoBehaviour
     public ObjectFeedback objectsPlantsP1;
     public ObjectFeedback objectsPlantsP2;
 
+    public GameObject prefabParticleSystem;
     public void Setup(Game _g)
     {
         _game = _g;
@@ -50,6 +51,15 @@ public class GameFeedback : MonoBehaviour
         _game.player1.playerScore.cloudsChangeEvent += (x) => { if (x) objectsCloudsP1.PopObject(); else objectsCloudsP1.RemoveObject(); };
         _game.player2.playerScore.plantsChangeEvent += (x) => { if (x) objectsPlantsP2.PopObject(); else objectsPlantsP2.RemoveObject(); };
         _game.player2.playerScore.cloudsChangeEvent += (x) => { if (x) objectsCloudsP2.PopObject(); else objectsCloudsP2.RemoveObject(); };
+
+        objectsAnimalP1.GiveParticleSystem(prefabParticleSystem);
+        objectsAnimalsP2.GiveParticleSystem(prefabParticleSystem);
+        objectsHumansP1.GiveParticleSystem(prefabParticleSystem);
+        objectsHumansP2.GiveParticleSystem(prefabParticleSystem);
+        objectsCloudsP1.GiveParticleSystem(prefabParticleSystem);
+        objectsCloudsP2.GiveParticleSystem(prefabParticleSystem);
+        objectsPlantsP1.GiveParticleSystem(prefabParticleSystem);
+        objectsPlantsP2.GiveParticleSystem(prefabParticleSystem);
     }
 
     // Update is called once per frame
