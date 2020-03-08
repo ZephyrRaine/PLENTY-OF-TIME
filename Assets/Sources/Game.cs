@@ -60,6 +60,10 @@ public class Game : MonoBehaviour
         {
             _gameRunning = false;
             mainMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            new GameObject("VICTORYTFUCk", typeof(VictoryFuck)).GetComponent<VictoryFuck>().WINNER = ((player1.playerScore.score > player2.playerScore.score) ? 1:2);
+
+
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Victory");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/victory");
         };
 
@@ -190,6 +194,11 @@ public class Game : MonoBehaviour
         cloudLifeInstance.setParameterByName("intensity", (player1.playerScore.cloudCount + player2.playerScore.cloudCount) / maxCloud);
         plantLifeInstance.setParameterByName("intensity", (player1.playerScore.plantCount + player2.playerScore.plantCount) / maxPlant);
         watterLifeInstance.setParameterByName("intensity", (player1.playerScore.waterLevel + player2.playerScore.waterLevel) / maxWatter);
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public Timer CreateTimer(float duration, float tick = 0f, bool loop = false)

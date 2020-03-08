@@ -16,6 +16,7 @@ public class Barre : MonoBehaviour
     private void Start()
     {
         game = FindObjectOfType<Game>();
+        SetWinning(0.5f);
     }
     public void SetWinning(float winning)
     {
