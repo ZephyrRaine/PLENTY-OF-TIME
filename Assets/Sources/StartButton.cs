@@ -21,7 +21,8 @@ public class StartButton : MonoBehaviour
 
         if (player1Ready && player2Ready)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("GameScene");
+            GameObject.Destroy(this.gameObject);
         }
     }
 }
