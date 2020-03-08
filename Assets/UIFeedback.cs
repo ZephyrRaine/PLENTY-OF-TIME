@@ -20,6 +20,7 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
     public Canvas parentCanvas;
     public bool checkDeadZone = false;
 
+    public GameObject fuck;
     public void  OnPlayerEnter(Player enterPlayer)
     {
         if (enterPlayer.playerId == player.playerId)
@@ -33,6 +34,8 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
             isOccupyByOpponent = true;
         }
 
+        if (fuck != null)
+            fuck.SetActive(true);
         UpdateState();
     }
 
@@ -48,7 +51,8 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
             // Enemy out
             isOccupyByOpponent = false;
         }
-
+        if(fuck != null)
+            fuck.SetActive(false);
         UpdateState();
     }
 
