@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,10 +14,9 @@ public class Game : MonoBehaviour
     public Player player1;
     public Player player2;
 
-    public Text gameClock;
+    public TMP_Text gameClock;
 
     private bool _gameRunning;
-
 
     private void Awake()
     {
