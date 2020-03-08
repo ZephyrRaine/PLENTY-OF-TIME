@@ -33,7 +33,7 @@ public class Game : MonoBehaviour
     public int maxWatter = 0;
     public int maxHuman = 0;
     public int maxAnimal = 0;
-
+    public List<GameObject> versions;
     private void Awake()
     {
         
@@ -46,6 +46,8 @@ public class Game : MonoBehaviour
 
     public void StartGame ()
     {
+        versions[Random.Range(0, versions.Count)].SetActive(true);
+
         player1.Setup(this);
         player2.Setup(this);
 
@@ -64,7 +66,7 @@ public class Game : MonoBehaviour
         _gameTimer.Start();
         _gameRunning = true;
 
-        GetComponent<GameFeedback>().Setup(this);
+        FindObjectOfType<GameFeedback>().Setup(this);
 
         mainMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music-ingame");
         mainMusic.start();

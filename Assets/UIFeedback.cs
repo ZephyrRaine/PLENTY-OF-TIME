@@ -20,6 +20,7 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
     public Canvas parentCanvas;
     public bool checkDeadZone = false;
 
+    public GameObject fuck;
     public void  OnPlayerEnter(Player enterPlayer)
     {
         if (enterPlayer.playerId == player.playerId)
@@ -33,6 +34,8 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
             isOccupyByOpponent = true;
         }
 
+        if (fuck != null)
+            fuck.SetActive(true);
         UpdateState();
     }
 
@@ -48,7 +51,8 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
             // Enemy out
             isOccupyByOpponent = false;
         }
-
+        if(fuck != null)
+            fuck.SetActive(false);
         UpdateState();
     }
 
@@ -56,7 +60,7 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
     {
         if (isOccupyByPlayer == true)
         {
-            Color c = new Color(0.2379431f, 0.9433962f, 0.2091492f, 0.454902f);
+            Color c = new Color(0f, 1f, 0.2400875f, 0.1333333f);
             //c.a = 0.15f;
             image.color = c;
             if (text != null)
@@ -64,7 +68,7 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
         }
         else if (isOccupyByOpponent == true)
         {
-            Color c = new Color(1f, 0.219917f, 0.219917f, 0.6980392f);
+            Color c = new Color(1f, 0f, 0.2127948f, 0.2196078f);
             //c.a = 0.15f;
             image.color = c;
             if (text != null)
