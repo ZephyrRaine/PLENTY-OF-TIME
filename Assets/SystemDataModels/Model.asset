@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d89afeb0bcef8e4c9d60e121e55259a, type: 3}
   m_Name: Model
   m_EditorClassIdentifier: 
-  gameDuration: 60
+  gameDuration: 100
   lightOffTime: 5
   atmosphereMaximumClouds: 3
   plantsMaximumPlants: 5
-  waterIncreaseValue: 10
-  waterIncreaseTime: 5
-  waterDecreaseValue: 10
-  waterDecreaseTime: 5
-  waterMaximumLevels: 100
+  waterIncreaseValue: 5
+  waterIncreaseTime: 1
+  waterDecreaseValue: 5
+  waterDecreaseTime: 1
+  waterMaximumLevels: 60
   animalsRequiredPlants: 2
   animalsIncreaseValue: 1
   animalsIncreaseTime: 5
@@ -30,4 +30,4 @@ MonoBehaviour:
   humansRequiredAnimals: 3
   humansIncreaseValue: 1
   humansIncreaseTime: 5
-  humansScoreIncrease: 20
+  humansScoreIncrease: 50
