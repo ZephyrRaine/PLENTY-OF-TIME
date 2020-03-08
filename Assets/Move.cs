@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Move : MonoBehaviour
 {
+    /*
     public KeyCode upKey;
     public KeyCode downKey;
     public KeyCode leftKey;
@@ -104,4 +105,5 @@ public class Move : MonoBehaviour
         }
         
     }
+    */
 }

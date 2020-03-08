@@ -17,9 +17,13 @@ public class PlayerAvatar : MonoBehaviour
 
     private Vector3 direction;
 
+    public bool pressFire { get; private set; }
+
+    private SunCollider _sun;
+
     void Start()
     {
-
+        _sun = GameObject.FindObjectOfType<SunCollider>();
     }
 
     UIFeedback _curFeedback;
@@ -34,24 +38,30 @@ public class PlayerAvatar : MonoBehaviour
         {
             if (_curFeedback != null && _curFeedback != value)
             {
-                _curFeedback.Hide();
+                _curFeedback.OnPlayerExit(player);
             }
             _curFeedback = value;
 
 
-            _curFeedback?.Toggle(player);
+            _curFeedback?.OnPlayerEnter(player);
         }
     }
-
+    private void OnGUI()
+    {
+        GUILayout.Label(Input.GetAxis(horizontalAxis).ToString());
+    }
     void Update()
     {
-        direction = new Vector3(
-            Input.GetAxis(horizontalAxis),
-            Input.GetAxis(verticalAxis),
-            0f
-        );
+        direction.x = Input.GetAxis(horizontalAxis);
+        direction.y = Input.GetAxis(verticalAxis);
+        direction.z = 0f;
 
         direction.Normalize();
+
+        if (Input.GetButtonDown(fire))
+        {
+            pressFire = true;
+        }
     }
 
     private void FixedUpdate()
@@ -60,17 +70,34 @@ public class PlayerAvatar : MonoBehaviour
 
         // Physics
 
+        // Check Feedback
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
         pointerData.position = Camera.main.WorldToScreenPoint(transform.position);
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
 
+        UnityEngine.Debug.Log(gameObject.name + " : " + pointerData.position);
+
         if (results.Count > 0)
         {
             UIFeedback fb = results[0].gameObject.GetComponent<UIFeedback>();
+
             if (fb != null)
             {
-                curFeedback = fb;
+                RectTransform fbRect = fb.image.GetComponent<RectTransform>();
+                Vector3 fbPosition = fbRect.position;
+                float widht = fbRect.rect.width * fbRect.GetComponentInParent<Canvas>().scaleFactor;
+                float distance = Vector2.Distance(pointerData.position, fbPosition);
+
+                if (distance <= (widht /2f))
+                {
+                    curFeedback = fb;                    
+                }
+                else
+                {
+                    curFeedback = null;
+                }
+
                 results.Clear();
             }
             else
@@ -83,9 +110,30 @@ public class PlayerAvatar : MonoBehaviour
             curFeedback = null;
         }
 
-        if (curFeedback != null && Input.GetButtonDown(fire))
+        if (curFeedback != null && pressFire)
         {
             curFeedback.Activate(player);
         }
+
+        // Check suncollider
+
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(Camera.main.transform.position,
+            _sun.transform.position - Camera.main.transform.position, 
+            out hitInfo, 
+            1000f, 
+            LayerMask.NameToLayer("PERSO")))
+        {
+            PlayerAvatar m = hitInfo.transform.GetComponent<PlayerAvatar>();
+
+            if (m != null && pressFire)
+            {
+                _sun.p.Launch(player, player.opponent, 0);
+            }
+
+        }
+
+        pressFire = false;
     }
 }
