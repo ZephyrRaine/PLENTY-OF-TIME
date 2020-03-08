@@ -5,4 +5,5 @@ using UnityEngine;
 public class SunCollider : MonoBehaviour
 {
     public Power p;
+    public GameObject fuck;
 }
