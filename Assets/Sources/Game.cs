@@ -18,6 +18,7 @@ public class Game : MonoBehaviour
     public TMP_Text gameClock;
 
     private bool _gameRunning;
+    public float pourcent = 0.5f;
 
     private EventInstance mainMusic = default(EventInstance);
 
@@ -169,7 +170,6 @@ public class Game : MonoBehaviour
         float score1 = player1.playerScore.score;
         float score2 = player2.playerScore.score;
         float total = score1 + score2;
-        float pourcent = 0.5f;
 
         if (score1 > score2)
         {
