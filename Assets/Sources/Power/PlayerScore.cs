@@ -33,9 +33,9 @@ public class PlayerScore : MonoBehaviour
     public int waterLevel { get { return _waterLevel; } set { _waterLevel = value; waterText.text = "water " + _waterLevel; } }
     public int animalCount { get { return _animalCount; } set { _animalCount = value; animalText.text = "animal " + _animalCount; } }
     public int totalAnimalsCount { get { return _totalAnimalsCount; } set {  _totalAnimalsCount = value; totalAnimals.text = "TOTAL " + _totalAnimalsCount; } }
-    public int cloudCount { get { return _cloudCount; } set { bool add = value > _cloudCount; cloudsChangeEvent.Invoke(add); _cloudCount = value; cloudText.text = "cloud " + _cloudCount; } }
+    public int cloudCount { get { return _cloudCount; } set { bool add = value > _cloudCount; cloudsChangeEvent?.Invoke(add); _cloudCount = value; cloudText.text = "cloud " + _cloudCount; } }
     public int humanCount { get { return _humanCount; } set { _humanCount = value; humanText.text = "human " + _humanCount; } }
-    public int plantCount { get { return _plantCount; } set { bool add = value > _plantCount; plantsChangeEvent.Invoke(add); _plantCount = value; plantText.text = "plant " + _plantCount; } }
+    public int plantCount { get { return _plantCount; } set { bool add = value > _plantCount; plantsChangeEvent?.Invoke(add); _plantCount = value; plantText.text = "plant " + _plantCount; } }
     public bool sun { get { return _sun; } set { _sun = value; sunText.text = _sun?"SUN":"MOON"; } }
     public bool lightOff { get { return _lightOff; } set { _lightOff = value; lightImage.enabled = value; }}
 
