@@ -25,6 +25,8 @@ public class Timer
             int numberOfSeconds = (int)_total;
             int numberOfMinutes = (int)(_total / 60);
 
+            numberOfSeconds -= (numberOfMinutes * 60);
+
             return string.Format("{0}:{1}", numberOfMinutes.ToString("00"), numberOfSeconds.ToString("00"));
         }
     }
