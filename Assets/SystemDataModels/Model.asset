@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d89afeb0bcef8e4c9d60e121e55259a, type: 3}
   m_Name: Model
   m_EditorClassIdentifier: 
-  gameDuration: 60
+  gameDuration: 180
   lightOffTime: 5
   atmosphereMaximumClouds: 3
   plantsMaximumPlants: 5
