@@ -122,12 +122,11 @@ public class PlayerAvatar : MonoBehaviour
             LayerMask.NameToLayer("PERSO")))
         {
             PlayerAvatar m = hitInfo.transform.GetComponent<PlayerAvatar>();
-
-            if (m != null && pressFire)
+                        
+            if (m != null && m.player.playerId == this.player.playerId && pressFire)
             {
                 _sun.p.Launch(player, player.opponent, 0);
             }
-
         }
 
         pressFire = false;
