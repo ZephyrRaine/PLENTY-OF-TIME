@@ -56,16 +56,16 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
     {
         if (isOccupyByPlayer == true)
         {
-            Color c = Color.green;
-            c.a = 0.15f;
+            Color c = new Color(0.2379431f, 0.9433962f, 0.2091492f, 0.454902f);
+            //c.a = 0.15f;
             image.color = c;
             if (text != null)
                 text.text = "+";
         }
         else if (isOccupyByOpponent == true)
         {
-            Color c = Color.red;
-            c.a = 0.15f;
+            Color c = new Color(1f, 0.219917f, 0.219917f, 0.6980392f);
+            //c.a = 0.15f;
             image.color = c;
             if (text != null)
                 text.text = "-";

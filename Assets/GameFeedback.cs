@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class GameFeedback : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -24,6 +24,8 @@ public class GameFeedback : MonoBehaviour
     public ObjectFeedback objectsPlantsP2;
 
     public GameObject prefabParticleSystem;
+
+    public MeshRenderer planetObject;
     public void Setup(Game _g)
     {
         _game = _g;
@@ -60,6 +62,13 @@ public class GameFeedback : MonoBehaviour
         objectsCloudsP2.GiveParticleSystem(prefabParticleSystem);
         objectsPlantsP1.GiveParticleSystem(prefabParticleSystem);
         objectsPlantsP2.GiveParticleSystem(prefabParticleSystem);
+
+
+        _game.player1.sunTimer.ticked += () => { planetObject.material.DOFloat(1f - Mathf.Lerp(0f, 1f, Mathf.InverseLerp(0f, _game.dataModel.waterMaximumLevels, _game.player1.playerScore.waterLevel)), "_LEFT_WATER", _game.dataModel.waterIncreaseTime); };
+        _game.player1.moonTimer.ticked += () => { planetObject.material.DOFloat(1f - Mathf.Lerp(0f, 1f, Mathf.InverseLerp(0f, _game.dataModel.waterMaximumLevels, _game.player1.playerScore.waterLevel)), "_LEFT_WATER", _game.dataModel.waterDecreaseTime); };
+        _game.player2.sunTimer.ticked += () => { planetObject.material.DOFloat(1f - Mathf.Lerp(0f, 1f, Mathf.InverseLerp(0f, _game.dataModel.waterMaximumLevels, _game.player2.playerScore.waterLevel)), "_RIGHT_WATER", _game.dataModel.waterIncreaseTime); };
+        _game.player2.moonTimer.ticked += () => { planetObject.material.DOFloat(1f - Mathf.Lerp(0f, 1f, Mathf.InverseLerp(0f, _game.dataModel.waterMaximumLevels, _game.player2.playerScore.waterLevel)), "_RIGHT_WATER", _game.dataModel.waterDecreaseTime); };
+
     }
 
     // Update is called once per frame
