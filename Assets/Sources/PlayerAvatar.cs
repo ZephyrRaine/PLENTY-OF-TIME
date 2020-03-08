@@ -142,6 +142,18 @@ public class PlayerAvatar : MonoBehaviour
             if (m != null && m.player.playerId == this.player.playerId && pressFire)
             {
                 _sun.p.Launch(player, player.opponent, 0);
+
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/sun-influence");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/moon-influence");
+
+                if (this.player.playerId == 1)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/good-stinger");
+                }
+                else
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/evil-stinger");
+                }
             }
         }
 
