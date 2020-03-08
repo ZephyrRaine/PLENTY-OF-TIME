@@ -65,7 +65,7 @@ public class PlayerMenu : MonoBehaviour
         {
             if (pressFire == true)
             {
-                startButton.PlayerPress(playerId);
+                startButton?.PlayerPress(playerId);
             }
         }
 
