@@ -64,7 +64,16 @@ public class PlayerAvatar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        //
+
+        Vector3 newPositon = transform.position + (direction * speed * Time.deltaTime);
+        Vector3 newScreenPosition = Camera.main.WorldToScreenPoint(newPositon);
+
+        if (newScreenPosition.x > 0f && newScreenPosition.x < Screen.width &&
+            newScreenPosition.y > 0f && newScreenPosition.y < Screen.height)
+        {
+            transform.position = newPositon;
+        }
 
         // Physics
 
