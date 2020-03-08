@@ -18,6 +18,7 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
     public bool isOccupyByOpponent;
 
     public Canvas parentCanvas;
+    public bool checkDeadZone = false;
 
     public void  OnPlayerEnter(Player enterPlayer)
     {
