@@ -20,6 +20,7 @@ public class PlayerAvatar : MonoBehaviour
     public bool pressFire { get; private set; }
 
     private SunCollider _sun;
+    private Canvas _canvas;
 
     void Start()
     {
@@ -46,10 +47,7 @@ public class PlayerAvatar : MonoBehaviour
             _curFeedback?.OnPlayerEnter(player);
         }
     }
-    private void OnGUI()
-    {
-        GUILayout.Label(Input.GetAxis(horizontalAxis).ToString());
-    }
+
     void Update()
     {
         direction.x = Input.GetAxis(horizontalAxis);
@@ -76,8 +74,6 @@ public class PlayerAvatar : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
 
-        UnityEngine.Debug.Log(gameObject.name + " : " + pointerData.position);
-
         if (results.Count > 0)
         {
             UIFeedback fb = results[0].gameObject.GetComponent<UIFeedback>();
@@ -86,7 +82,7 @@ public class PlayerAvatar : MonoBehaviour
             {
                 RectTransform fbRect = fb.image.GetComponent<RectTransform>();
                 Vector3 fbPosition = fbRect.position;
-                float widht = fbRect.rect.width * fbRect.GetComponentInParent<Canvas>().scaleFactor;
+                float widht = fbRect.rect.width * fb.parentCanvas.scaleFactor;
                 float distance = Vector2.Distance(pointerData.position, fbPosition);
 
                 if (distance <= (widht /2f))
