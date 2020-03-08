@@ -43,8 +43,10 @@ public class PlayerAvatar : MonoBehaviour
             }
             _curFeedback = value;
 
-
-            _curFeedback?.OnPlayerEnter(player);
+            if(_curFeedback != null)
+            {
+                _curFeedback.OnPlayerEnter(player);
+            }
         }
     }
 
@@ -138,23 +140,31 @@ public class PlayerAvatar : MonoBehaviour
             LayerMask.NameToLayer("PERSO")))
         {
             PlayerAvatar m = hitInfo.transform.GetComponent<PlayerAvatar>();
-                        
-            if (m != null && m.player.playerId == this.player.playerId && pressFire)
+                _sun.fuck.SetActive(true);
+
+            if (m != null && m.player.playerId == this.player.playerId)
             {
-                _sun.p.Launch(player, player.opponent, 0);
-
-                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/sun-influence");
-                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/moon-influence");
-
-                if (this.player.playerId == 1)
+                if(pressFire)
                 {
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/good-stinger");
-                }
-                else
-                {
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/evil-stinger");
+                    _sun.p.Launch(player, player.opponent, 0);
+
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/sun-influence");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/moon-influence");
+
+                    if (this.player.playerId == 1)
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/good-stinger");
+                    }
+                    else
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/evil-stinger");
+                    }
                 }
             }
+        }
+        else
+        {
+            _sun.fuck.SetActive(false);
         }
 
         pressFire = false;
