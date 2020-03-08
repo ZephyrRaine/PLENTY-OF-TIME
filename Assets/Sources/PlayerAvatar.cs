@@ -80,18 +80,25 @@ public class PlayerAvatar : MonoBehaviour
 
             if (fb != null)
             {
-                RectTransform fbRect = fb.image.GetComponent<RectTransform>();
-                Vector3 fbPosition = fbRect.position;
-                float widht = fbRect.rect.width * fb.parentCanvas.scaleFactor;
-                float distance = Vector2.Distance(pointerData.position, fbPosition);
-
-                if (distance <= (widht /2f))
+                if (fb.checkDeadZone == true)
                 {
-                    curFeedback = fb;                    
+                    RectTransform fbRect = fb.image.GetComponent<RectTransform>();
+                    Vector3 fbPosition = fbRect.position;
+                    float widht = fbRect.rect.width * fb.parentCanvas.scaleFactor;
+                    float distance = Vector2.Distance(pointerData.position, fbPosition);
+
+                    if (distance <= (widht / 2f))
+                    {
+                        curFeedback = fb;
+                    }
+                    else
+                    {
+                        curFeedback = null;
+                    }
                 }
                 else
                 {
-                    curFeedback = null;
+                    curFeedback = fb;
                 }
 
                 results.Clear();
