@@ -142,7 +142,7 @@ public class PlayerAvatar : MonoBehaviour
             PlayerAvatar m = hitInfo.transform.GetComponent<PlayerAvatar>();
                 _sun.fuck.SetActive(true);
 
-            if (m != null && m.player.playerId == this.player.playerId)
+            if (m != null && m.player.playerId == this.player.playerId && _sun.enabled)
             {
                 if(pressFire)
                 {

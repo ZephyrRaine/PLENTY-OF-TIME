@@ -7,7 +7,14 @@ public class FeedbackMoonSun : MonoBehaviour
     [ContextMenu("Toggle")]
     public void ToggleAnimation()
     {
-        transform.DOLocalRotate(new Vector3(0f,0f,transform.eulerAngles.z * -1f), 2.5f).SetEase(Ease.InOutBounce);
+        _s.enabled = false;
+        transform.DOLocalRotate(new Vector3(0f,0f,transform.eulerAngles.z * -1f), 2.5f).SetEase(Ease.InOutBounce).onComplete += ()=> { _s.enabled = true; };
+    }
+
+    SunCollider _s;
+    public void Start()
+    {
+        _s = FindObjectOfType<SunCollider>();
     }
 
     public void SetLeft(bool l)
