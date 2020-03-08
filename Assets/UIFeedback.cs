@@ -17,6 +17,8 @@ public class UIFeedback : MonoBehaviour /*IPointerEnterHandler, IPointerExitHand
     public bool isOccupyByPlayer;
     public bool isOccupyByOpponent;
 
+    public Canvas parentCanvas;
+
     public void  OnPlayerEnter(Player enterPlayer)
     {
         if (enterPlayer.playerId == player.playerId)

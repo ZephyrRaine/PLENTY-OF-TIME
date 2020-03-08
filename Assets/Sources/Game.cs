@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMOD.Studio;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class Game : MonoBehaviour
     public TMP_Text gameClock;
 
     private bool _gameRunning;
+
+    private EventInstance mainMusic = default(EventInstance);
 
     private void Awake()
     {
@@ -38,11 +41,20 @@ public class Game : MonoBehaviour
 
         _gameTimer = CreateTimer(dataModel.gameDuration);
 
-        _gameTimer.stoped += () => { _gameRunning = false; };
+        _gameTimer.stoped += () => 
+        {
+            _gameRunning = false;
+            mainMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/victory");
+        };
+
         _gameTimer.Start();
         _gameRunning = true;
 
         GetComponent<GameFeedback>().Setup(this);
+
+        mainMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music-ingame");
+        mainMusic.start();
     }
 
     // Update is called once per frame
@@ -62,6 +74,27 @@ public class Game : MonoBehaviour
         player2.UpdateInput();
         player1.UpdateScore();
         player2.UpdateScore();
+
+        //0 full player 1
+        //0.5 full equal
+        //1 full player 2
+
+        float score1 = player1.playerScore.score;
+        float score2 = player2.playerScore.score;
+        float total = score1 + score2;
+        float pourcent = 0.5f;
+
+        if (score1 > score2)
+        {
+            //how much from 0 to 0.5
+            pourcent = Mathf.Lerp(0.5f, 0f, score1 / total);
+        }
+        else
+        {
+            pourcent = Mathf.Lerp(0.5f, 1f, score2 / total);
+        }
+
+        mainMusic.setParameterByName("goodvsbad", pourcent);
     }
 
     public Timer CreateTimer(float duration, float tick = 0f, bool loop = false)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 public class FeedbackIcon : MonoBehaviour
 {
@@ -22,12 +23,32 @@ public class FeedbackIcon : MonoBehaviour
     [ContextMenu("ToggleFeedback")]
     public void ToggleFeedback(bool b)
     {
-        if(a!=b)
-            a = b;
-        else 
-            return;
-
+        Debug.Log($"Toggle feedback {b}");
+        //if(a != b)
+        //    a = b;
+        //else 
+        //    return;
+        a = b;
         glow.DOFade(a?1f:0f, 1f);
         sprite.DOColor(a?activeColor:Color.white, 1f);
+    }
+    ParticleSystem _ps;
+    ParticleSystem ps
+    {
+        get
+        {
+            if (_ps == null)
+                _ps = GetComponentInChildren<ParticleSystem>();
+
+            return _ps;
+        }
+    }
+
+    public void Tick()
+    {
+        Debug.Log("Tick");
+        ps.Clear();
+        ps.Simulate(0f);
+        ps.Play();
     }
 }
