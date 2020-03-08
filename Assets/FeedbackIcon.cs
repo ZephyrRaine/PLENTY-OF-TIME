@@ -46,7 +46,6 @@ public class FeedbackIcon : MonoBehaviour
 
     public void Tick()
     {
-        Debug.Log("Tick");
         ps.Clear();
         ps.Simulate(0f);
         ps.Play();

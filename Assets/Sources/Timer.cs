@@ -17,6 +17,7 @@ public class Timer
     public bool running = false;
 
     public float progress { get { return _total / _duration; } }
+    public float tickProgress { get { return _step / _tick; } }
 
     public string currentTime
     {
