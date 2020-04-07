@@ -1268,7 +1268,7 @@ Transform:
   m_Children:
   - {fileID: 52257331}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &338473782
 MonoBehaviour:
@@ -1695,7 +1695,7 @@ Transform:
   m_Children:
   - {fileID: 636805026}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &528255337
 MonoBehaviour:
@@ -7587,12 +7587,12 @@ PrefabInstance:
     - target: {fileID: 9216437173643595531, guid: 7c776f88bde4700438480e85dded40da,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.21
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9216437173643595531, guid: 7c776f88bde4700438480e85dded40da,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.44
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9216437173643595531, guid: 7c776f88bde4700438480e85dded40da,
         type: 3}
@@ -7622,7 +7622,7 @@ PrefabInstance:
     - target: {fileID: 9216437173643595531, guid: 7c776f88bde4700438480e85dded40da,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9216437173643595531, guid: 7c776f88bde4700438480e85dded40da,
         type: 3}
@@ -7677,6 +7677,75 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4368331
   m_Center: {x: 0, y: 0.09961805, z: -0.0941546}
+--- !u!114 &918052774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918052771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2b84ae7dca964584186a91c2be898154,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8d1764ea-aa37-49ac-a05d-5ac6f2d49544
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5de9cc97-587e-400d-a7b1-6cfe3c6c2140
+    m_ActionName: Player/Fire[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 918052772}
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 21bd6a91-2d90-4c65-9746-1f103540936d
+    m_ActionName: Player2/Move[/XInputControllerWindows/leftStick,/XInputControllerWindows/leftStick,/Keyboard/o,/Keyboard/l,/Keyboard/k,/Keyboard/semicolon]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 918052772}
+        m_MethodName: Fire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 820e229c-4b7d-409d-af29-97024a6ec82c
+    m_ActionName: Player2/Fire[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/enter]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Gamepad
+  m_DefaultActionMap: Player2
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -7851,7 +7920,7 @@ Transform:
   - {fileID: 246550384}
   - {fileID: 1888121158}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1067769795 stripped
 MonoBehaviour:
@@ -9703,7 +9772,7 @@ PrefabInstance:
     - target: {fileID: 2899910695865310163, guid: 6497996be46909845a7a252237afc87a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2899910695865310163, guid: 6497996be46909845a7a252237afc87a,
         type: 3}
@@ -12613,6 +12682,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acd881960c07e140ace2b3ed86aca65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1694196936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694196938}
+  - component: {fileID: 1694196937}
+  m_Layer: 0
+  m_Name: CustomInputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1694196937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694196936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8babaee661c0564396cc5f011d98863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 1938074533}
+  - {fileID: 918052774}
+--- !u!4 &1694196938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694196936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712618385
 GameObject:
   m_ObjectHideFlags: 0
@@ -13852,17 +13967,17 @@ PrefabInstance:
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.04
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.17
+      value: -3.35
       objectReference: {fileID: 0}
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
@@ -13887,7 +14002,7 @@ PrefabInstance:
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8020257792040318578, guid: 1ec40f07cb70f884e85d8cc1acd2b054,
         type: 3}
@@ -14007,6 +14122,75 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4763349
   m_Center: {x: -0.00000078976154, y: 0.14633492, z: -0.0941546}
+--- !u!114 &1938074533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938074530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2b84ae7dca964584186a91c2be898154,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1938074531}
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8d1764ea-aa37-49ac-a05d-5ac6f2d49544
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1938074531}
+        m_MethodName: Fire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5de9cc97-587e-400d-a7b1-6cfe3c6c2140
+    m_ActionName: Player/Fire[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 21bd6a91-2d90-4c65-9746-1f103540936d
+    m_ActionName: Player2/Move[/XInputControllerWindows/leftStick,/XInputControllerWindows/leftStick,/Keyboard/o,/Keyboard/l,/Keyboard/k,/Keyboard/semicolon]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 820e229c-4b7d-409d-af29-97024a6ec82c
+    m_ActionName: Player2/Fire[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/enter]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Gamepad
+  m_DefaultActionMap: Player1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2000715367
 GameObject:
   m_ObjectHideFlags: 0
@@ -14420,7 +14604,7 @@ Transform:
   m_Children:
   - {fileID: 1403912497}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2133238060
 MonoBehaviour:

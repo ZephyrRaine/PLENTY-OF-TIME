@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using TMPro;
+
 public class VICTORY : MonoBehaviour
 {
     public TMP_Text winner;
@@ -10,15 +10,21 @@ public class VICTORY : MonoBehaviour
     void Start()
     {
         winner.text = FindObjectOfType<VictoryFuck>().WINNER.ToString();
+
+        var myAction = new InputAction(binding: "/*/<button>");
+        myAction.performed += (action) => { myAction.Disable(); myAction.Dispose(); Reload(); };
+        myAction.Enable();
+    }
+
+    void  Reload ()
+    {
+        SceneManager.LoadSceneAsync("GameScene");
+        Destroy(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("FireJ1") || Input.GetButtonDown("FireJ2"))
-        {
-            SceneManager.LoadSceneAsync("GameScene");
-            Destroy(this);
-        }
+        //
     }
 }

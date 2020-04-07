@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PlayerMenu : MonoBehaviour
 {
@@ -18,21 +19,22 @@ public class PlayerMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //
     }
 
     private void Update()
     {
-        direction.x = Input.GetAxis(horizontalAxis);
-        direction.y = Input.GetAxis(verticalAxis);
-        direction.z = 0f;
+        //
+    }
 
-        direction.Normalize();
+    public void Move(InputAction.CallbackContext context)
+    {
+        direction = context.ReadValue<Vector2>();
+    }
 
-        if (Input.GetButtonDown(fire))
-        {
-            pressFire = true;
-        }
+    public void Fire(InputAction.CallbackContext context)
+    {
+        pressFire = true;
     }
 
     // Update is called once per frame

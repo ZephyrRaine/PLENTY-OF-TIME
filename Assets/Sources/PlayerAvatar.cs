@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PlayerAvatar : MonoBehaviour
 {
@@ -52,16 +53,17 @@ public class PlayerAvatar : MonoBehaviour
 
     void Update()
     {
-        direction.x = Input.GetAxis(horizontalAxis);
-        direction.y = Input.GetAxis(verticalAxis);
-        direction.z = 0f;
+        //
+    }
 
-        direction.Normalize();
+    public void Move(InputAction.CallbackContext context)
+    {
+        direction = context.ReadValue<Vector2>();
+    }
 
-        if (Input.GetButtonDown(fire))
-        {
-            pressFire = true;
-        }
+    public void Fire(InputAction.CallbackContext context)
+    {
+        pressFire = true;
     }
 
     private void FixedUpdate()
