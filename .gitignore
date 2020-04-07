@@ -67,6 +67,5 @@ crashlytics-build.properties
 *_hcm.swatch
 
 fmod_editor.log
-fmod_editor.log
-fmod_editor.log
+./fmod_editor.log
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
